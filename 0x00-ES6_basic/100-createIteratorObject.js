@@ -1,3 +1,4 @@
+/* eslint-disable guard-for-in */
 // {
 //   allEmployees: { engineering: [ 'Bob', 'Jane' ], marketing: [ 'Sylvie' ] },
 //   getNumberOfDepartments: [Function: getNumberOfDepartments]
