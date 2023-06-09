@@ -1,0 +1,30 @@
+version: "3.9"
+services:
+  # for ubuntu 18
+  ubuntu18:
+    image: ubuntu:bionic
+    volumes:
+      - .:/code
+    command: ["sleep","infinity"]
+
+  #UNCOMMENT # for ubuntu 20
+  # ubuntu20:
+  #   image: ubuntu:focal
+  #   volumes:
+  #     - .:/code
+  #   command: ["sleep","infinity"]
+  #   security_opt:
+  #     - seccomp:unconfined
+  #   cap_add:
+  #     - SYS_PTRACE
+
+  #UNCOMMENT # for ubuntu 22
+  # ubuntu22:
+  #   image: ubuntu:jammy
+  #   volumes:
+  #     - .:/code
+  #   command: ["sleep","infinity"]
+  #   security_opt:
+  #     - seccomp:unconfined
+  #   cap_add:
+  #     - SYS_PTRACE
