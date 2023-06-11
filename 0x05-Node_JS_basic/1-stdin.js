@@ -10,6 +10,7 @@ process.stdin.on('readable', function () {  // allow
   if (name !== null) {
     // The program should display Your name is: INPUT
     process.stdout.write(`Your name is: ${name}`);
+    console.log(`Your name is: ${name}`);
   }
 });
 
@@ -17,4 +18,3 @@ process.stdin.on('readable', function () {  // allow
 process.stdin.on('end', () => {
   console.log('This important software is now closing');
 });
-process.stdin.read;
