@@ -1,8 +1,9 @@
-const process = require('process');
-process.stdin.setEncoding('utf8');
-
-const welcome = "Welcome to Holberton School, what is your name?";
-console.log(welcome);
+/*
+ * No need to import or `require` process
+ * process.stdin.isTTY; returns True if user typed in console
+ * & False if variable is passed to the program using redirections`> | ...`
+ */
+process.stdout.write("Welcome to Holberton School, what is your name?\n");
 
 process.stdin.on('readable', function () {  // allow
   // The user should be able to input their name on a new line
@@ -10,11 +11,9 @@ process.stdin.on('readable', function () {  // allow
   if (name !== null) {
     // The program should display Your name is: INPUT
     process.stdout.write(`Your name is: ${name}`);
-    // console.log(`Your name is: ${name}`);
   }
 });
-
 // When the user ends the program
 process.stdin.on('end', () => {
-  console.log('This important software is now closing');
+  process.stdout.write("This important software is now closing");
 });
