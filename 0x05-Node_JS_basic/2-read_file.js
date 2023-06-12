@@ -1,4 +1,4 @@
-const fs = require('fs');
+const { readFileSync } = require('fs');
 
 
 /**
@@ -11,7 +11,7 @@ function countStudents(path) {
   let length = 0; // length counter
   try {
     // read the file synchronously
-    const content = fs.readFileSync(path, 'utf-8');
+    const content = readFileSync(path, 'utf-8');
     // console.log(content);
     // split the file by new-lines and save as list
     let lines = content.toString().split('\n');
@@ -36,8 +36,7 @@ function countStudents(path) {
             // create a key of the 4th elem with a list of firstnames as value
             students[field[3]] = [field[0]];
           }
-        }
-        // store the num of students per field
+        } // store the num of students per field
         // increment if key exists already
         if (Object.prototype.hasOwnProperty.call(fields, field[3])) {
           fields[field[3]] += 1;
