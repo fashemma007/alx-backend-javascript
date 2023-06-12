@@ -1,13 +1,12 @@
 const { readFileSync } = require('fs');
 
-
 /**
  * Read the database file provided in `path` synchronously
  * @param {Path} path
  */
 function countStudents(path) {
-  const students = {}; // initialize empty dict 
-  const fields = {}; // initialize empty dict 
+  const students = {}; // initialize empty dict
+  const fields = {}; // initialize empty dict
   let length = 0; // length counter
   try {
     // read the file synchronously
@@ -22,7 +21,7 @@ function countStudents(path) {
         const field = lines[i].toString().split(',');
         if (field[0] === '') { // chk for empty lines
           // console.log("All good");
-          continue;
+          length += 0;
         } else {
           // console.log(field[0]);
           length += 1;
@@ -39,20 +38,25 @@ function countStudents(path) {
         } // store the num of students per field
         // increment if key exists already
         if (Object.prototype.hasOwnProperty.call(fields, field[3])) {
-          fields[field[3]] += 1;
-        } else { // create k:v init to 1
+          if (field[3] !== '') {
+            fields[field[3]] += 1;
+          }
+        } else if (field[3] !== '') { // create k:v init to 1
           fields[field[3]] = 1;
         }
       }
     }
+    // console.log(fields);
     console.log(`Number of students: ${length}`);
     for (const [key, value] of Object.entries(fields)) {
       if (key !== 'field') {
+        // console.log(`Anoda key ${key}`);
         console.log(`Number of students in ${key}: ${value}. List: ${students[key].join(', ')}`);
       }
     }
   } catch (error) {
-    throw Error('Cannot load the database');
+    // throw Error('Cannot load the database');
+    console.log(error);
   }
 }
 

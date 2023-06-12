@@ -2,8 +2,8 @@
 const { readFile } = require('fs');
 
 function countStudents(filePath) {
-  const students = {}; // initialize empty dict 
-  const fields = {}; // initialize empty dict 
+  const students = {}; // initialize empty dict
+  const fields = {}; // initialize empty dict
   let length = 0; // length counter
   return new Promise((resolve, reject) => {
     readFile(filePath, (error, data) => {
@@ -18,7 +18,7 @@ function countStudents(filePath) {
             const field = lines[i].toString().split(',');
             if (field[0] === '') { // chk for empty lines
               // console.log("All good");
-              continue;
+              length += 0;
             } else {
               // console.log(field[0]);
               length += 1;
