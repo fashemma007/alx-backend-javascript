@@ -1,0 +1,15 @@
+{
+  "name": "0x06-unittests_in_js",
+  "version": "1.0.0",
+  "type":"commonjs",
+  "description": "Learning unittesting in Node",
+  "main": "0-calcul.js",
+  "scripts": {
+    "test": "mocha --recursive './*.test.js'"
+  },
+  "author": "Emmanuel Fasogba",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^10.2.0"
+  }
+}
