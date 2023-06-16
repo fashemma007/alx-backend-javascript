@@ -7,10 +7,11 @@ app.get('/', (_, res) => {
   res.send('Welcome to the payment system');
 });
 
-app.get('/cart/:id(\\d+)', (req, res) => {
-  const id = req.params.id;
+// type validation in routes:: :id(\\d+) means id can only be +ve ints
+app.get('/cart/:id(\\d+)', (request, response) => {
+  const { id } = request.params;
 
-  res.send(`Payment methods for cart ${id}`);
+  response.send(`Payment methods for cart ${id}`);
 });
 
 app.listen(PORT, () => {
