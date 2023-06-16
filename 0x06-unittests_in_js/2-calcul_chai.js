@@ -1,3 +1,4 @@
+/* eslint-disable default-case */
 function calculateNumber(type, a, b) {
   const aa = Math.round(a);
   const bb = Math.round(b);

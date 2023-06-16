@@ -67,4 +67,7 @@ describe('calculateNumber Divisions', () => {
   it("calculateNumber('DIVIDE', -1.5, -3.7)", () => {
     assert.equal(calculateNumber('DIVIDE', -1.5, -3.7), 0.25);
   });
+  it("calculateNumber('DIVIDE', -1.5, -0.3)", () => {
+    assert.equal(calculateNumber('DIVIDE', -1.5, -0.3), 'Error');
+  });
 });
